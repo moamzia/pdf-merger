@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>A.Z's Awesome PDF Merger</title>
+    </head>
+    <body>
+        <h1>Welcome to Narnia!...NOT</h1>
+        <p>Everyone knows Narnia isn't a website. Don't be an ignorant slut.</p>
+        <h2>What is this web page?</h2>
+        <p>Let me break it down in a simple dumb words so you'd understand.</p>
+        <p>This is a very trust worthy, not hacky-looking website where you can trust the builders with your whole heart and upload your deepest darkest secrets in a PDF format file. It's made to merge your stupid PDFs with their stupid contents (if you're an uploader, it has to be stupid - not you mom)</p>
+        <form id="uploadForm"
+              enctype="multipart/form-data"
+              action="/api/upload-pdf"
+              method="post">
+            <label for="pdfs">This is where you put your PDF files:</label>
+
+            <input type="file"
+                   id="pdfs" name="pdfs"
+                   accept="application/pdf" multiple>
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </body>
+</html>
