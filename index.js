@@ -4,14 +4,16 @@ const express = require('express');
 const app = express();
 const multer = require('multer');
 const storage = multer.memoryStorage();
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, `${__dirname}/uploads`);
-//     }
-// });
 const upload = multer({storage: storage});
+const pino = require('pino');
+const expressPino = require('express-pino-logger');
+
+const logger = pino({ level: process.env.LOG_LEVEL || 'debug' });//FIXME: change this back to info
+const expressLogger = expressPino({ logger });
+app.use(expressLogger);
 
 app.get('/', function (req, res) {
+    console.log("");
     fs.readFile('home.html', function (err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data);

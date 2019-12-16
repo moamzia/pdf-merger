@@ -20,4 +20,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3001
-CMD [ "node", "index.js" ]
+CMD [ "node", "index.js", "|", "./node_modules/.bin/pino-pretty" ]
