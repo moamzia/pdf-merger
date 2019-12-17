@@ -18,6 +18,6 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-
-EXPOSE 3001
-CMD [ "node", "index.js", "|", "./node_modules/.bin/pino-pretty" ]
+RUN mkdir -p /tmp/my-uploads
+#EXPOSE 3001
+CMD node index.js
